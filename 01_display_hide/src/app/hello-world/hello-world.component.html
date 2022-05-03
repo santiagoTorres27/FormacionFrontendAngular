@@ -1,0 +1,8 @@
+<h1>Hello World!</h1>
+<button class="btn" (click)="mostrarImagen()">
+  {{ imagenVisible ? "Esconder" : "Mostrar" }}
+</button>
+
+<div class="img" *ngIf="imagenVisible">
+  <img src="../../assets/hello_world.png" alt="Hello world image" />
+</div>
