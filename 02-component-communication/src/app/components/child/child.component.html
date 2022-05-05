@@ -1,11 +1,12 @@
 <div class="container child-container">
-  <h1>Child</h1>
+  <span class="title">Child</span>
   <p class="message">
-    message: {{ (message ? message : messageOnScreen) | uppercase }}
+    message:
+    <strong>{{ (message ? message : messageOnScreen) | uppercase }}</strong>
   </p>
   <div class="button-group">
-    <button (click)="sendMessageUsingService()">Use Service</button>
-    <button (click)="sendMessageUsingOutput()">Use Output Event</button>
-    <button (click)="sendMessageUsingObservable()">Use Observable</button>
+    <button (click)="sendMsgService()">Use Service</button>
+    <button (click)="sendMsgOutput()">Use Output Event</button>
+    <button (click)="sendMsgObservable()">Use Observable</button>
   </div>
 </div>

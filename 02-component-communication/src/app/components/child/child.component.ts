@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CommunicationService } from '../service/communication.service';
+import { ComponentsService } from '../service/components.service';
 
 @Component({
   selector: 'app-child',
@@ -7,40 +7,38 @@ import { CommunicationService } from '../service/communication.service';
   styleUrls: ['./child.component.css'],
 })
 export class ChildComponent implements OnInit {
-  //Receive msg to the parent
-  @Input()
-  message: string = '';
-
   messageOnScreen = '';
 
-  //Send the message to the parent
-  @Output()
-  onMessageWithOutput: EventEmitter<string> = new EventEmitter();
+  //Receive msg to the parent
+  @Input() message: string = '';
 
-  constructor(private communicationService: CommunicationService) {}
+  //Send the message to the parent
+  @Output() childMsg: EventEmitter<string> = new EventEmitter();
+
+  constructor(private componentsService: ComponentsService) {}
 
   ngOnInit(): void {
-    //Get msg from the service
-    this.communicationService.getMesssageFromParent().subscribe((msg) => {
+    //Subscribe to parentMsg Observable
+    this.componentsService.getParentMsg().subscribe((msg) => {
       this.messageOnScreen = msg;
     });
 
-    //Get msg from the service - observable
-    this.communicationService.msgParentObservable.subscribe((msg) => {
+    //Subscribe to parentMsg EventEmitter
+    this.componentsService.parentMsg.subscribe((msg) => {
       this.messageOnScreen = msg;
     });
   }
 
   //Methods to send the msg to the parent
-  sendMessageUsingService() {
-    this.communicationService.sendMessageFromChild();
+  sendMsgService() {
+    this.componentsService.childMsg.emit('child using service');
   }
 
-  sendMessageUsingOutput() {
-    this.onMessageWithOutput.emit('child using output event');
+  sendMsgOutput() {
+    this.childMsg.emit('child using output event');
   }
 
-  sendMessageUsingObservable() {
-    this.communicationService.msgChildObservable.emit('child using observable');
+  sendMsgObservable() {
+    this.componentsService.sendChildMsg();
   }
 }

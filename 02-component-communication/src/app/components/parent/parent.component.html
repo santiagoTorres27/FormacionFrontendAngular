@@ -1,14 +1,13 @@
 <div class="container">
-  <h1>Parent</h1>
-  <p class="message">message: {{ messageOnScreen | uppercase }}</p>
+  <span class="title">Parent</span>
+  <p class="message">
+    message: <strong>{{ messageOnScreen | uppercase }}</strong>
+  </p>
   <div class="button-group">
-    <button (click)="sendMessageUsingService()">Use Service</button>
-    <button (click)="sendMessageUsingInput()">Use Input Property</button>
-    <button (click)="sendMessageUsingObservable()">Use Observable</button>
+    <button (click)="sendMsgService()">Use Service</button>
+    <button (click)="sendMsgInput()">Use Input Property</button>
+    <button (click)="sendMsgObservable()">Use Observable</button>
   </div>
 
-  <app-child
-    [message]="message"
-    (onMessageWithOutput)="getMessageWithOutput($event)"
-  ></app-child>
+  <app-child [message]="message" (childMsg)="getChildMsg($event)"></app-child>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommunicationService } from '../service/communication.service';
+import { ComponentsService } from '../service/components.service';
 
 @Component({
   selector: 'app-parent',
@@ -10,39 +10,37 @@ export class ParentComponent implements OnInit {
   message = '';
   messageOnScreen = '';
 
-  constructor(private communicationService: CommunicationService) {}
+  constructor(private componentsService: ComponentsService) {}
 
   ngOnInit(): void {
-    //Get msg from the service
-    this.communicationService.getMessageFromChild().subscribe((msg) => {
+    //Subscribe to childMsg Observable
+    this.componentsService.getChildMsg().subscribe((msg) => {
       this.messageOnScreen = msg;
     });
 
-    //Get msg from service - observable
-    this.communicationService.msgChildObservable.subscribe((msg) => {
+    //Subscribe to childMsg EventEmitter
+    this.componentsService.childMsg.subscribe((msg) => {
       this.messageOnScreen = msg;
     });
   }
 
   //Get msg from child using output
-  getMessageWithOutput(msg: string) {
+  getChildMsg(msg: string) {
     this.messageOnScreen = msg;
   }
 
   //Methods to send msg to the child
-  sendMessageUsingService() {
-    this.communicationService.sendMessageFromParent();
+  sendMsgService() {
+    this.componentsService.parentMsg.emit('parent using service');
     this.message = '';
   }
 
-  sendMessageUsingInput() {
+  sendMsgInput() {
     this.message = 'parent using input property';
   }
 
-  sendMessageUsingObservable() {
-    this.communicationService.msgParentObservable.emit(
-      'parent using observable'
-    );
+  sendMsgObservable() {
+    this.componentsService.sendParentMsg();
     this.message = '';
   }
 }

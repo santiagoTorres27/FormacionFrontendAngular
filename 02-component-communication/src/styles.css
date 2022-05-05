@@ -12,6 +12,13 @@ body {
   background-color: whitesmoke;
 }
 
+.title {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #555;
+}
+
 button {
   background-color: dodgerblue;
   font-family: inherit;
