@@ -1,0 +1,7 @@
+<div class="light-switch-control" *ngIf="powerOn">
+  <select [(ngModel)]="colorSelected" (change)="sendColor()">
+    <option value="red">Rojo</option>
+    <option value="yellow">Amarillo</option>
+    <option value="green">Verde</option>
+  </select>
+</div>

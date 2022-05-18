@@ -30,17 +30,17 @@ export class ParentComponent implements OnInit {
   }
 
   //Methods to send msg to the child
+  sendMsgInput() {
+    this.message = 'parent using input property';
+  }
+
   sendMsgService() {
     this.componentsService.parentMsg.emit('parent using service');
     this.message = '';
   }
 
-  sendMsgInput() {
-    this.message = 'parent using input property';
-  }
-
   sendMsgObservable() {
-    this.componentsService.sendParentMsg();
+    this.componentsService.sendParentMsg('parent using observable');
     this.message = '';
   }
 }

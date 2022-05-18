@@ -1,0 +1,93 @@
+<div>
+  <mat-card>
+    <form
+      autocomplete="off"
+      [formGroup]="form"
+      #formDirective="ngForm"
+      (ngSubmit)="submitForm()"
+    >
+      <!-- Name -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" />
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error>El nombre es obligatorio</mat-error>
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error>{{ passwordErrorMsg }}</mat-error>
+      </mat-form-field>
+
+      <!-- Repeat Password -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Repeat Password</mat-label>
+        <input matInput type="password" formControlName="password2" />
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error>Las contraseñas no coinciden</mat-error>
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-icon matSuffix>mail</mat-icon>
+        <mat-error>{{ emailErrorMsg }}</mat-error>
+      </mat-form-field>
+
+      <!-- Subscription -->
+      <mat-checkbox
+        class="example-margin w-full pb-3"
+        formControlName="isSubscribed"
+        >Enviarme ofertas promocionales</mat-checkbox
+      >
+
+      <!-- Country -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>País</mat-label>
+        <mat-select disableRipple formControlName="country">
+          <mat-option
+            *ngFor="let country of countries"
+            [value]="country.name"
+            >{{ country.name }}</mat-option
+          >
+        </mat-select>
+        <mat-error>El país es obligatorio</mat-error>
+      </mat-form-field>
+
+      <!-- City -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Ciudad</mat-label>
+        <input matInput formControlName="city" />
+        <mat-icon matSuffix>pin_drop</mat-icon>
+        <mat-error>La ciudad es obligatoria</mat-error>
+      </mat-form-field>
+
+      <div class="flex justify-content-end">
+        <button
+          mat-stroked-button
+          color="warn"
+          type="button"
+          *ngIf="updating"
+          (click)="cancel()"
+          class="mr-4"
+        >
+          Cancelar
+        </button>
+        <button mat-raised-button color="primary">
+          {{ updating ? "Actualizar" : "Crear usuario" }}
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
+<!-- <pre>{{ form.pristine }}</pre>
+<pre>{{ form.untouched }}</pre>
+<pre>{{ form.valid }}</pre>
+<pre>{{ form.value | json }}</pre>
+<pre>{{ form.controls["email"].errors | json }}</pre>
+ -->

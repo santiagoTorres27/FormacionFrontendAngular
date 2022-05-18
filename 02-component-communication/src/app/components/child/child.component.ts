@@ -9,7 +9,7 @@ import { ComponentsService } from '../service/components.service';
 export class ChildComponent implements OnInit {
   messageOnScreen = '';
 
-  //Receive msg to the parent
+  //Receive msg from the parent
   @Input() message: string = '';
 
   //Send the message to the parent
@@ -39,6 +39,6 @@ export class ChildComponent implements OnInit {
   }
 
   sendMsgObservable() {
-    this.componentsService.sendChildMsg();
+    this.componentsService.sendChildMsg('child using observable');
   }
 }

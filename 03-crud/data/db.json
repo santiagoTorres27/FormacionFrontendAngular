@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "name": "Santiago Torres Ayala",
+      "password": "123456",
+      "password2": "123456",
+      "email": "santiago@gmail.com",
+      "isSubscribed": true,
+      "country": "Egypt",
+      "city": "Ibarra",
+      "id": 1
+    },
+    {
+      "name": "Carmen García",
+      "password": "123456",
+      "password2": "123456",
+      "email": "carmen@gmail.com",
+      "isSubscribed": null,
+      "country": "Spain",
+      "city": "Madrid",
+      "id": 2
+    },
+    {
+      "name": "Jorge Gutierrez",
+      "password": "123456",
+      "password2": "123456",
+      "email": "jorge@gmail.com",
+      "isSubscribed": true,
+      "country": "Portugal",
+      "city": "Lisboa",
+      "id": 3
+    },
+    {
+      "name": "Carmen García 2223",
+      "password": "123456",
+      "password2": "123456",
+      "email": "carmen@gmail.com",
+      "isSubscribed": true,
+      "country": "Spain",
+      "city": "Madrid",
+      "id": 4
+    },
+    {
+      "name": "Alejandra",
+      "password": "123456",
+      "password2": "123456",
+      "email": "123@gmail.com",
+      "isSubscribed": true,
+      "country": "Åland Islands",
+      "city": "sdf",
+      "id": 5
+    },
+    {
+      "name": "123",
+      "password": "123456",
+      "password2": "123456",
+      "email": "123@sg.com",
+      "isSubscribed": true,
+      "country": "Åland Islands",
+      "city": "asdf",
+      "id": 6
+    }
+  ]
+}

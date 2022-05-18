@@ -13,8 +13,8 @@ export class ComponentsService {
   // Parent
   parentMsgObservable = new Subject<string>();
 
-  sendParentMsg() {
-    return this.parentMsgObservable.next('parent using observable');
+  sendParentMsg(msg: string) {
+    return this.parentMsgObservable.next(msg);
   }
 
   getParentMsg() {
@@ -24,8 +24,8 @@ export class ComponentsService {
   //Child
   childMsgObservable = new Subject<string>();
 
-  sendChildMsg() {
-    return this.childMsgObservable.next('child using observable');
+  sendChildMsg(msg: string) {
+    return this.childMsgObservable.next(msg);
   }
 
   getChildMsg() {

@@ -46,15 +46,6 @@ h1 {
   width: 100%;
 }
 
-@keyframes img-anim {
-  0% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 900px) {
   .img {
     width: 100%;

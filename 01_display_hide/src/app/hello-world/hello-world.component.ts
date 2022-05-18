@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hello-world.component.css'],
 })
 export class HelloWorldComponent {
-  imagenVisible: boolean = false;
+  isImgVisible: boolean = false;
 
-  mostrarImagen() {
-    this.imagenVisible = !this.imagenVisible;
+  showImage() {
+    this.isImgVisible = !this.isImgVisible;
   }
 }

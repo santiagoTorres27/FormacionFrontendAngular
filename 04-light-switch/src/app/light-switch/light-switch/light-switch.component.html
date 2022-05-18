@@ -1,0 +1,15 @@
+<div class="light-switch">
+  <div *ngFor="let light of lights" [class]="light.class"></div>
+</div>
+
+<div>
+  <label class="switch">
+    <input type="checkbox" (click)="turnOn()" />
+    <span class="slider round"></span>
+  </label>
+</div>
+
+<app-light-switch-control
+  [powerOn]="isPowerOn"
+  (onColorEmitted)="receiveColor($event)"
+></app-light-switch-control>
