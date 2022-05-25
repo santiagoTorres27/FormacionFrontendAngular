@@ -5,7 +5,7 @@ import { CovidService } from '../../services/covid.service';
 @Component({
   selector: 'app-covid-bar',
   templateUrl: './covid-bar.component.html',
-  styleUrls: ['./covid-bar.component.css'],
+  styleUrls: ['./covid-bar.component.scss'],
 })
 export class CovidBarComponent implements OnInit {
   public barChartOptions: ChartConfiguration['options'] = {

@@ -9,7 +9,7 @@ import { User } from '../interfaces/user.interface';
 export class UsersService {
   baseUrl: string = 'http://localhost:3000';
 
-  updateData = new Subject<boolean>();
+  /*   updateData = new Subject<boolean>();
 
   sendRequest() {
     this.updateData.next(true);
@@ -17,7 +17,7 @@ export class UsersService {
 
   getRequest() {
     return this.updateData.asObservable();
-  }
+  } */
 
   //EventEmitter
   userId = new EventEmitter<string>();
@@ -28,11 +28,7 @@ export class UsersService {
 
   // Get all the users
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`).pipe(
-      tap(() => {
-        this.getUsers();
-      })
-    );
+    return this.http.get<User[]>(`${this.baseUrl}/users`);
   }
 
   // Get single user

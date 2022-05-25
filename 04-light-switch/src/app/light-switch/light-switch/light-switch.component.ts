@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-
-interface Light {
-  name: string;
-  class: string;
-}
+import { Light } from '../interfaces/light.interface';
 
 @Component({
   selector: 'app-light-switch',
   templateUrl: './light-switch.component.html',
-  styleUrls: ['./light-switch.component.css'],
+  styleUrls: ['./light-switch.component.scss'],
 })
 export class LightSwitchComponent implements OnInit {
   isPowerOn: boolean = false;

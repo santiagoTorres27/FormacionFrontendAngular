@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-light-switch-control',
   templateUrl: './light-switch-control.component.html',
-  styleUrls: ['./light-switch-control.component.css'],
+  styleUrls: ['./light-switch-control.component.scss'],
 })
 export class LightSwitchControlComponent implements OnInit {
   colorSelected: string = 'red';

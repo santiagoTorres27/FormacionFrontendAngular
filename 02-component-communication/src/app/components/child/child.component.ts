@@ -4,7 +4,7 @@ import { ComponentsService } from '../service/components.service';
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css'],
+  styleUrls: ['./child.component.scss'],
 })
 export class ChildComponent implements OnInit {
   messageOnScreen = '';

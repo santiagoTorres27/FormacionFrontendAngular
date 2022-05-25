@@ -3,6 +3,7 @@
   <p class="message">
     message:
     <strong>{{ (message ? message : messageOnScreen) | uppercase }}</strong>
+    <!-- <strong>{{ message }}</strong> -->
   </p>
   <div class="button-group">
     <button (click)="sendMsgService()">Use Service</button>

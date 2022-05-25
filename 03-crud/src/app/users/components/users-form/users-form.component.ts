@@ -9,7 +9,7 @@ import { ValidatorService } from '../../services/validator.service';
 @Component({
   selector: 'app-users-form',
   templateUrl: './users-form.component.html',
-  styleUrls: ['./users-form.component.css'],
+  styleUrls: ['./users-form.component.scss'],
 })
 export class UsersFormComponent implements OnInit {
   @ViewChild('formDirective') formDirective!: NgForm;
@@ -52,6 +52,7 @@ export class UsersFormComponent implements OnInit {
     return '';
   }
 
+  // Getter for email errors
   get emailErrorMsg(): string {
     const errors = this.form.get('email')?.errors;
     if (errors?.['required']) {

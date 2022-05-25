@@ -5,7 +5,7 @@ import { CovidService } from '../../services/covid.service';
 @Component({
   selector: 'app-covid-doughnut',
   templateUrl: './covid-doughnut.component.html',
-  styleUrls: ['./covid-doughnut.component.css'],
+  styleUrls: ['./covid-doughnut.component.scss'],
 })
 export class CovidDoughnutComponent implements OnInit {
   public doughnutChartData: ChartData<'doughnut'> = {
